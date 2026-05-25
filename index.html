@@ -573,7 +573,7 @@
     #contato { background: var(--cinza-50); }
 
     .contato-centro {
-      max-width: 720px; margin: 0 auto; text-align: center;
+      max-width: 860px; margin: 0 auto; text-align: center;
     }
 
     .contato-centro h2 {
@@ -588,7 +588,7 @@
 
     .contato-grade {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem; text-align: left;
     }
 
@@ -596,15 +596,15 @@
       background: var(--branco);
       border: 1px solid var(--borda);
       border-radius: var(--radius-lg);
-      padding: 1.375rem 1.25rem;
+      padding: 1.25rem 1.375rem;
       box-shadow: var(--sombra-sm);
-      display: flex; align-items: flex-start; gap: 12px;
+      display: flex; align-items: flex-start; gap: 14px;
       transition: box-shadow var(--transicao);
     }
     .contato-card:hover { box-shadow: var(--sombra-md); }
 
     .contato-card-icone {
-      width: 40px; height: 40px; flex-shrink: 0;
+      width: 38px; height: 38px; flex-shrink: 0;
       background: var(--azul-50);
       border: 1px solid var(--azul-100);
       border-radius: var(--radius-sm);
@@ -612,14 +612,19 @@
       font-size: 1rem;
     }
 
+    .contato-card-texto {
+      min-width: 0; /* evita overflow no grid */
+    }
+
     .contato-card-texto strong {
       display: block;
-      font-size: 0.7rem; font-weight: 700;
+      font-size: 0.68rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--azul-600); margin-bottom: 4px;
+      color: var(--azul-600); margin-bottom: 5px;
     }
     .contato-card-texto span {
-      font-size: 0.875rem; color: var(--cinza-700); line-height: 1.5;
+      font-size: 0.875rem; color: var(--cinza-700);
+      line-height: 1.55; word-break: break-word;
     }
 
     /* ================================================
@@ -729,6 +734,7 @@
       section { padding: 4rem 0; }
       .trabalhos-grade { grid-template-columns: 1fr; }
       .contato-grade { grid-template-columns: 1fr; }
+      .contato-centro { max-width: 100%; }
       .hero-acoes { flex-direction: column; align-items: center; }
       .hero-acoes .btn { width: 100%; max-width: 280px; justify-content: center; }
       .abas { overflow-x: auto; -webkit-overflow-scrolling: touch; }
